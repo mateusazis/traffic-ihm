@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal" >
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/lineName"
+        android:layout_width="100dp"
+        android:layout_height="49dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_weight="0.12"
+        android:text="aa"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/LineNameColor" />
 
     <ImageView
         android:id="@+id/lineLogo"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:layout_weight="0.01"
+        android:layout_alignBottom="@+id/lineName"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/lineName"
         android:src="@drawable/ic_launcher" />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.03" >
-
-        <TextView
-            android:id="@+id/lineName"
-            android:layout_width="wrap_content"
-            android:layout_height="49dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="21dp"
-            android:layout_weight="0.12"
-            android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/LineNameColor" />
-
-    </RelativeLayout>
-
-</LinearLayout>
+</RelativeLayout>

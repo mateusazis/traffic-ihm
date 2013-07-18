@@ -1,7 +1,18 @@
 package br.uff.ihm.traffic;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.apache.http.protocol.UriPatternMatcher;
+
+import android.net.Uri;
+
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,21 +44,10 @@ View row = convertView;
         }
         TextView nameView = (TextView)row.findViewById(R.id.lineName);
         ImageView logoView = (ImageView)row.findViewById(R.id.lineLogo);
-//        TextView tvNome = (TextView)row.findViewById(R.id.tvNome);
-//        TextView tvValor = (TextView)row.findViewById(R.id.tvValor);
         Line l = objects[position];
         nameView.setText(l.number);
-        logoView.setImageResource(R.drawable.inga_logo);
         
-//        int cor = m.isDespesa() ? Color.RED : Color.GREEN;
-//        tvData.setTextColor(cor);
-//        tvNome.setTextColor(cor);
-//        tvValor.setTextColor(cor);
-//        tvData.setText(m.getData().toString());
-//        tvNome.setText(m.getNome());
-//        int qtd = m.getQtd();
-//        float val = m.getValor();
-//        tvValor.setText(String.format("%d x %.2f = R$ %.2f", qtd, val, qtd*val));
+        ImageHelper.applyImage(logoView, l.company.imgName, act);
         
         return row;
 	}
