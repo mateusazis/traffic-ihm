@@ -91,6 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:drawableLeft="@drawable/route_icon"
             android:onClick="showDetailedRoute"
             android:text="Visualizar Percurso" />
 

@@ -11,7 +11,7 @@ import java.util.TimerTask;
 
 public class MainActivity extends Activity {
 
-	private static final boolean SKIP_LOADING = false;
+	private static final boolean SKIP_LOADING = true;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void run() {
-				android.widget.Toast.makeText(getApplicationContext(), "Conectado!", 1000).show();
+			Toast.makeText(getApplicationContext(), "Conectado!", Toast.LENGTH_SHORT).show();
 			}
 		});
 		Intent i = new Intent(getApplicationContext(), LinesActivity.class);

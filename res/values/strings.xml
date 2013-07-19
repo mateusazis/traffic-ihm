@@ -4,5 +4,10 @@
     <string name="app_name">Traffic</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string-array name="feedback_type">
+        <item >Reclamação</item>
+        <item >Sugestão</item>
+        <item >Dúvida</item>
+    </string-array>
 
 </resources>

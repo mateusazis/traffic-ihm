@@ -40,8 +40,8 @@ public class LinesActivity extends Activity implements OnItemClickListener {
 	
 	private Line[] getLines(){
 		return new Line[]{
-				new Line("49", Company.COMPANY_INGA, "Icaraí - Fonseca"), 
-				new Line("760D", Company.COMPANY_1001, "Charitas - Gávea")
+				new Line("49", Company.COMPANY_INGA, "Icaraí - Fonseca", 0.89f, 44.5f), 
+				new Line("760D", Company.COMPANY_1001, "Charitas - Gávea", 0.238f, 39.2f)
 			};
 	}
 

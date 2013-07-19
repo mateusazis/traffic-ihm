@@ -8,13 +8,16 @@
 package br.uff.ihm.traffic;
 
 public final class R {
+    public static final class array {
+        public static final int feedback_type=0x7f060000;
+    }
     public static final class attr {
     }
     public static final class color {
-        public static final int LineNameColor=0x7f070000;
-        public static final int LotationBad=0x7f070002;
-        public static final int LotationGood=0x7f070001;
-        public static final int LotationMiddle=0x7f070003;
+        public static final int LineNameColor=0x7f080000;
+        public static final int LotationBad=0x7f080002;
+        public static final int LotationGood=0x7f080001;
+        public static final int LotationMiddle=0x7f080003;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -28,33 +31,43 @@ public final class R {
     }
     public static final class drawable {
         public static final int bus=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
+        public static final int feedback_icon=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int route_icon=0x7f020003;
+        public static final int send_icon=0x7f020004;
     }
     public static final class id {
-        public static final int RelativeLayout1=0x7f090003;
-        public static final int RelativeLayout2=0x7f090005;
-        public static final int RelativeLayout3=0x7f090006;
-        public static final int action_settings=0x7f09000e;
-        public static final int averageSpeed=0x7f090009;
-        public static final int button1=0x7f09000b;
-        public static final int lineLogo=0x7f090004;
-        public static final int lineName=0x7f090000;
-        public static final int lines_list=0x7f090002;
-        public static final int lotation=0x7f09000c;
-        public static final int progressBar1=0x7f09000d;
-        public static final int route=0x7f09000a;
-        public static final int textView2=0x7f090001;
-        public static final int textView3=0x7f090007;
-        public static final int textView4=0x7f090008;
+        public static final int RelativeLayout1=0x7f0a0008;
+        public static final int RelativeLayout2=0x7f0a000a;
+        public static final int RelativeLayout3=0x7f0a000b;
+        public static final int action_settings=0x7f0a0012;
+        public static final int averageSpeed=0x7f0a000d;
+        public static final int button1=0x7f0a0005;
+        public static final int feedbackMsg=0x7f0a0004;
+        public static final int feedback_item=0x7f0a0011;
+        public static final int lineLogo=0x7f0a0009;
+        public static final int lineName=0x7f0a0006;
+        public static final int lines_list=0x7f0a0007;
+        public static final int lotation=0x7f0a000f;
+        public static final int progressBar1=0x7f0a0010;
+        public static final int route=0x7f0a000e;
+        public static final int spinner1=0x7f0a0002;
+        public static final int textView1=0x7f0a0000;
+        public static final int textView2=0x7f0a0001;
+        public static final int textView3=0x7f0a0003;
+        public static final int textView4=0x7f0a000c;
     }
     public static final class layout {
-        public static final int layout_lines=0x7f030000;
-        public static final int line_data=0x7f030001;
-        public static final int line_details_layout=0x7f030002;
-        public static final int main_layout=0x7f030003;
+        public static final int feedback_layout=0x7f030000;
+        public static final int layout_lines=0x7f030001;
+        public static final int line_data=0x7f030002;
+        public static final int line_details_layout=0x7f030003;
+        public static final int main_layout=0x7f030004;
+        public static final int route_layout=0x7f030005;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static final int feedback_menu=0x7f090000;
+        public static final int main=0x7f090001;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
@@ -72,10 +85,10 @@ public final class R {
             backward-compatibility can go here.
         
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
     }
 }

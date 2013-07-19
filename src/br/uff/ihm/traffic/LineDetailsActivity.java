@@ -1,8 +1,14 @@
 package br.uff.ihm.traffic;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,7 +32,7 @@ public class LineDetailsActivity extends Activity {
 		averageSpeedView = (TextView)findViewById(R.id.averageSpeed);
 		
 		fillData(selectedLine);
-	};
+	}
 	
 	private void fillData(Line l){
 		ImageHelper.applyImage(logoView, l.company.imgName, this);
@@ -34,8 +40,8 @@ public class LineDetailsActivity extends Activity {
 		lineNameView.setText(l.number);
 		routeView.setText(l.route);
 		
-		setLotation(0.87f);
-		setAverageSpeed(43.11f);
+		setLotation(l.lotationPcgt);
+		setAverageSpeed(l.averageSpeed);
 	}
 	
 	private void setLotation(float pctg){
@@ -59,14 +65,24 @@ public class LineDetailsActivity extends Activity {
 		averageSpeedView.setText(roundValue + " km/h");
 	}
 	
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		selectedLine = null;
-	};
-	
 	public void showDetailedRoute(View v){
 		Log.v("traffic", "show detailed route");
+		Intent i = new Intent(getApplicationContext(), RouteActivity.class);
+		startActivity(i);
 	}
 	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		MenuInflater inflater = new MenuInflater(getApplicationContext());
+		inflater.inflate(R.menu.feedback_menu, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		Intent i = new Intent(getApplicationContext(), FeedbackActivity.class);
+		startActivity(i);
+		return super.onOptionsItemSelected(item);
+	}
 }
