@@ -19,7 +19,7 @@ public class FeedbackActivity extends Activity {
 		String msgContent = msgView.getText().toString();
 		String msg;
 		if(msgContent.isEmpty())
-			msg = "Mensagem vazia, feedback n„o enviado.";
+			msg = "Mensagem vazia, feedback n√£o enviado.";
 		else
 			msg = "Feedback enviado.";
 		Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();

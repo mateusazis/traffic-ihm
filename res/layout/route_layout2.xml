@@ -5,10 +5,11 @@
     android:background="@drawable/bg_gradient"
     android:orientation="vertical" >
 
-    <com.google.android.maps.MapView
-        android:layout_height="fill_parent"
+    <WebView
+        android:id="@+id/routeWebview"
         android:layout_width="fill_parent"
-        android:apiKey="AIzaSyDS3VYu4YXaV1KvYwiW0dpt6hm_BPmT6Hw"
-        />
+        android:layout_height="fill_parent"
+        
+         />
     
 </LinearLayout>

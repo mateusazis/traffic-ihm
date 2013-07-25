@@ -11,7 +11,7 @@ import java.util.TimerTask;
 
 public class MainActivity extends Activity {
 
-	private static final boolean SKIP_LOADING = true;
+	private static final boolean SKIP_LOADING = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

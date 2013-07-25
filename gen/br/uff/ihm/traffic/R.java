@@ -30,32 +30,36 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int bus=0x7f020000;
-        public static final int feedback_icon=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int route_icon=0x7f020003;
-        public static final int send_icon=0x7f020004;
+        public static final int bg_gradient=0x7f020000;
+        public static final int bus=0x7f020001;
+        public static final int feedback_icon=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int route_icon=0x7f020004;
+        public static final int send_icon=0x7f020005;
     }
     public static final class id {
-        public static final int RelativeLayout1=0x7f0a0008;
-        public static final int RelativeLayout2=0x7f0a000a;
-        public static final int RelativeLayout3=0x7f0a000b;
-        public static final int action_settings=0x7f0a0012;
-        public static final int averageSpeed=0x7f0a000d;
-        public static final int button1=0x7f0a0005;
-        public static final int feedbackMsg=0x7f0a0004;
-        public static final int feedback_item=0x7f0a0011;
-        public static final int lineLogo=0x7f0a0009;
-        public static final int lineName=0x7f0a0006;
-        public static final int lines_list=0x7f0a0007;
-        public static final int lotation=0x7f0a000f;
-        public static final int progressBar1=0x7f0a0010;
-        public static final int route=0x7f0a000e;
-        public static final int spinner1=0x7f0a0002;
-        public static final int textView1=0x7f0a0000;
-        public static final int textView2=0x7f0a0001;
-        public static final int textView3=0x7f0a0003;
-        public static final int textView4=0x7f0a000c;
+        public static final int RelativeLayout1=0x7f0a0009;
+        public static final int RelativeLayout2=0x7f0a000c;
+        public static final int RelativeLayout3=0x7f0a000d;
+        public static final int action_settings=0x7f0a0015;
+        public static final int averageSpeed=0x7f0a000e;
+        public static final int button1=0x7f0a0006;
+        public static final int button2=0x7f0a0010;
+        public static final int feedbackMsg=0x7f0a0005;
+        public static final int feedback_item=0x7f0a0014;
+        public static final int lineLogo=0x7f0a000b;
+        public static final int lineName=0x7f0a000a;
+        public static final int lines_list=0x7f0a0008;
+        public static final int lotation=0x7f0a0012;
+        public static final int lotationProgressBar=0x7f0a0011;
+        public static final int pointView=0x7f0a0007;
+        public static final int route=0x7f0a000f;
+        public static final int routeWebview=0x7f0a0013;
+        public static final int spinner1=0x7f0a0001;
+        public static final int textView2=0x7f0a0000;
+        public static final int textView3=0x7f0a0004;
+        public static final int textView4=0x7f0a0002;
+        public static final int textView5=0x7f0a0003;
     }
     public static final class layout {
         public static final int feedback_layout=0x7f030000;
@@ -64,6 +68,7 @@ public final class R {
         public static final int line_details_layout=0x7f030003;
         public static final int main_layout=0x7f030004;
         public static final int route_layout=0x7f030005;
+        public static final int route_layout2=0x7f030006;
     }
     public static final class menu {
         public static final int feedback_menu=0x7f090000;

@@ -2,20 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/lineName"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Conectado ao ponto: Plazza Shopping"
+        android:gravity="center_horizontal"
+        android:text="Ponto de acesso"
+        android:textColor="#f8f8f8"
+        
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <TextView
+        android:id="@+id/pointView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Plazza Shopping"
+        android:textSize="32sp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#f7f758" />
+    
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Linhas que param neste ponto:"
+        android:text="Linhas disponíveis:"
+        android:textColor="#f8f8f8"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <ListView

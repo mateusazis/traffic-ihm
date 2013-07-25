@@ -14,6 +14,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.graphics.Typeface;
 
 public class LinesActivity extends Activity implements OnItemClickListener {
 	
@@ -24,24 +25,27 @@ public class LinesActivity extends Activity implements OnItemClickListener {
 		super.onCreate(b);
 		lines = getLines();
 		setContentView(R.layout.layout_lines);
-		int id = R.id.lines_list;
-		ListView lv = (ListView)findViewById(id);
 		
+		//setting point typeface
+		TextView pointView = (TextView)findViewById(R.id.pointView);
+		Typeface typeface = Typeface.createFromAsset(getAssets(), "PermanentMarker.ttf");
+		pointView.setTypeface(typeface);
+		
+		//setting up listview
+		ListView lv = (ListView)findViewById(R.id.lines_list);
 		LineAdapter a = new LineAdapter(this, getApplicationContext(), R.layout.line_data, lines);
-		
 		lv.setAdapter(a);
 		lv.setOnItemClickListener(this);
-		
-		TextView pointTV = (TextView)findViewById(R.id.lineName);
-		pointTV.setText(Html.fromHtml("Conectado ao ponto: <font color=red>Plazza Shopping</font>"));
-		
-
 	}
 	
 	private Line[] getLines(){
 		return new Line[]{
-				new Line("49", Company.COMPANY_INGA, "Icara� - Fonseca", 0.89f, 44.5f), 
-				new Line("760D", Company.COMPANY_1001, "Charitas - G�vea", 0.238f, 39.2f)
+				new Line("43", Company.COMPANY_INGA, "Icaraí - Fonseca", .5788f, 37.3f),
+				new Line("49", Company.COMPANY_INGA, "Icaraí - Fonseca", .1858f, 44.5f),
+				new Line("740D", Company.COMPANY_1001, "Charitas - Ipanema", .259f, 27.2f),
+				new Line("751", Company.COMPANY_1001, "Charitas - Gávea", .72f, 46.6f),
+				new Line("761", Company.COMPANY_1001, "Charitas - Galeão", .235f, 38.76f),
+				new Line("775D", Company.COMPANY_1001, "Charitas - Gávea (via Lapa)", .873f, 49.15f)
 			};
 	}
 

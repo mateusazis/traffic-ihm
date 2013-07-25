@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.util.Log;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ public class LineDetailsActivity extends Activity {
 	public static Line selectedLine;
 	private TextView lineNameView, routeView, lotationView, averageSpeedView;
 	private ImageView logoView;
+	private ProgressBar lotationBar;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class LineDetailsActivity extends Activity {
 		routeView = (TextView)findViewById(R.id.route);
 		lotationView = (TextView)findViewById(R.id.lotation);
 		averageSpeedView = (TextView)findViewById(R.id.averageSpeed);
+		lotationBar = (ProgressBar)findViewById(R.id.lotationProgressBar);
 		
 		fillData(selectedLine);
 	}
@@ -58,6 +61,8 @@ public class LineDetailsActivity extends Activity {
 		
 		lotationView.setTextColor(color);
 		lotationView.setText(roundValue + "%");
+		lotationBar.setMax(100);
+		lotationBar.setProgress(roundValue);
 	}
 	
 	private void setAverageSpeed(float speed){
@@ -71,18 +76,27 @@ public class LineDetailsActivity extends Activity {
 		startActivity(i);
 	}
 	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// TODO Auto-generated method stub
-		MenuInflater inflater = new MenuInflater(getApplicationContext());
-		inflater.inflate(R.menu.feedback_menu, menu);
-		return true;
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		// TODO Auto-generated method stub
+//		MenuInflater inflater = new MenuInflater(getApplicationContext());
+//		inflater.inflate(R.menu.feedback_menu, menu);
+//		return true;
+//	}
+//	
+//	@Override
+//	public boolean onOptionsItemSelected(MenuItem item) {
+//		Intent i = new Intent(getApplicationContext(), FeedbackActivity.class);
+//		startActivity(i);
+//		return super.onOptionsItemSelected(item);
+//	}
+	
+	public void sendFeedbackClicked(View v){
+		sendFeedback();
 	}
 	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
+	private void sendFeedback() {
 		Intent i = new Intent(getApplicationContext(), FeedbackActivity.class);
 		startActivity(i);
-		return super.onOptionsItemSelected(item);
 	}
 }

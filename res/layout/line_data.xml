@@ -12,8 +12,9 @@
         android:layout_centerVertical="true"
         android:layout_weight="0.12"
         android:text="aa"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/LineNameColor" />
+        android:textSize="32sp"
+        android:textColor="#FF000000"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ImageView
         android:id="@+id/lineLogo"
