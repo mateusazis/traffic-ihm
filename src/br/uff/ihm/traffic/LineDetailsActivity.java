@@ -1,19 +1,15 @@
 package br.uff.ihm.traffic;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.util.Log;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 
 public class LineDetailsActivity extends Activity {
@@ -71,9 +67,20 @@ public class LineDetailsActivity extends Activity {
 	}
 	
 	public void showDetailedRoute(View v){
-		Log.v("traffic", "show detailed route");
-		Intent i = new Intent(getApplicationContext(), RouteActivity.class);
+		Intent i = new Intent(getApplicationContext(), getRouteActivityClass());
 		startActivity(i);
+	}
+	
+	private Class<? extends Activity> getRouteActivityClass(){
+		if(isOnline())
+			return MapsRouteActivity.class;
+		return ImageRouteActivity.class;
+	}
+	
+	public boolean isOnline(){
+		ConnectivityManager manager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo netInfo = manager.getActiveNetworkInfo();
+		return netInfo != null && netInfo.isConnected();
 	}
 	
 //	@Override
