@@ -1,9 +1,8 @@
 package br.uff.ihm.traffic;
 
-import br.uff.ihm.traffic.models.Line;
+import br.uff.ihm.traffic.models.Bus;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,14 +10,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class LineAdapter extends ArrayAdapter<Line>{
+public class BusAdapter extends ArrayAdapter<Bus>{
 
 	private Activity act;
-	private Line[] objects;
+	private Bus[] objects;
 	private int layoutID;
 	
-	public LineAdapter(Activity a, Context context, int textViewResourceId, Line[] objects) {
-		super(context, textViewResourceId, objects);
+	public BusAdapter(Activity a, int textViewResourceId, Bus[] objects) {
+		super(a.getBaseContext(), textViewResourceId, objects);
 		act = a;
 		this.objects = objects;
 		this.layoutID = textViewResourceId;
@@ -35,11 +34,10 @@ View row = convertView;
         }
         TextView nameView = (TextView)row.findViewById(R.id.lineName);
         ImageView logoView = (ImageView)row.findViewById(R.id.lineLogo);
-        Line l = objects[position];
-        nameView.setText(l.number);
+        Bus b = objects[position];
+        nameView.setText(String.valueOf(b.id));
         
-        ImageHelper.applyImage(logoView, l.company.imgName, act);
-        
+        logoView.setImageResource(R.drawable.bus);
         return row;
 	}
 	

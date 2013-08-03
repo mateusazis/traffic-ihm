@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:background="@drawable/bg_gradient"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+
+        <TextView
+            android:id="@+id/averageSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView4"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/textView4"
+            android:text="70 km/h"
+            android:textColor="#f8f8f8"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:drawableLeft="@drawable/feedback_icon"
+            android:onClick="sendFeedbackClicked"
+            android:text="Contactar Empresa" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button2"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="95dp"
+            android:text="Velocidade média:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#f8f8f8" />
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+
+            <TextView
+                android:id="@+id/lineName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/lineLogo"
+                android:gravity="center_horizontal"
+                android:text="49 Blah"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="32sp" />
+
+            <ImageView
+                android:id="@+id/lineLogo"
+                android:layout_width="128dp"
+                android:layout_height="32dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_launcher" />
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/lotationProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/lotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/lotationProgressBar"
+            android:layout_centerHorizontal="true"
+            android:text="70%"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#f8f8f8" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/lotationProgressBar"
+            android:layout_alignParentLeft="true"
+            android:text="Lotação atual:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#f8f8f8" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/route"
+            android:layout_alignBottom="@+id/route"
+            android:layout_alignParentLeft="true"
+            android:text="Trajeto:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#f8f8f8" />
+
+        <TextView
+            android:id="@+id/route"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView3"
+            android:layout_alignLeft="@+id/button2"
+            android:layout_marginBottom="30dp"
+            android:text="Icaraí - Fonseca"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#f8f8f8" />
+
+        <TextView
+	        android:id="@+id/tvLineIDName"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginTop="96dp"
+	        android:text="Identificação do ônibus:"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	        android:textColor="#f8f8f8" />
+
+        <TextView
+            android:id="@+id/tvBusID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tvLineIDName"
+            android:layout_alignBottom="@+id/tvLineIDName"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/route"
+            android:gravity="center_horizontal"
+            android:text="23456"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#f8f8f8" />
+        
+    </RelativeLayout>
+</RelativeLayout>

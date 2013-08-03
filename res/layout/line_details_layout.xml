@@ -56,32 +56,9 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/textView2"
             android:layout_marginTop="47dp"
-            android:text="Lotação atual:"
-            android:textColor="#f8f8f8"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/textView3"
-            android:layout_marginTop="53dp"
-            android:text="Velocidade média:"
-            android:textColor="#f8f8f8"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <TextView
-            android:id="@+id/averageSpeed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textView4"
-            android:layout_alignBottom="@+id/textView4"
-            android:layout_marginLeft="15dp"
-            android:layout_toRightOf="@+id/textView4"
-            android:text="70 km/h"
-            android:textColor="#f8f8f8"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:text="Próximo ônibus em aproximadamente:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#f8f8f8" />
 
         <TextView
             android:id="@+id/route"
@@ -115,24 +92,36 @@
             android:onClick="sendFeedbackClicked"
             android:text="Contactar Empresa" />
 
-        <ProgressBar
-            android:id="@+id/lotationProgressBar"
-            style="?android:attr/progressBarStyleHorizontal"
+        <TextView
+            android:id="@+id/nextBusTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView3"
+            android:layout_centerHorizontal="true"
+            android:text="00:15:37"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/textView3" />
-
-        <TextView
-            android:id="@+id/lotation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/lotationProgressBar"
-            android:layout_centerHorizontal="true"
-            android:text="70%"
+            android:layout_below="@+id/nextBusTV"
+            android:text="Ônibus da linha parados no ponto:"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#f8f8f8" />
+
+        <ListView
+            android:id="@+id/busListView"
+            android:fadeScrollbars="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button1"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView4" >
+
+        </ListView>
 
     </RelativeLayout>
 

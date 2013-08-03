@@ -1,8 +1,8 @@
-package br.uff.ihm.traffic;
+package br.uff.ihm.traffic.models;
 
 public class Company {
 	
-	public static final Company COMPANY_INGA = new Company("Ingá", "inga.jpg");
+	public static final Company COMPANY_INGA = new Company("Ingï¿½", "inga.jpg");
 	public static final Company COMPANY_1001 = new Company("1001", "1001.jpg");
 	
 	public String imgName;
