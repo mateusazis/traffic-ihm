@@ -35,7 +35,7 @@ View row = convertView;
         TextView nameView = (TextView)row.findViewById(R.id.lineName);
         ImageView logoView = (ImageView)row.findViewById(R.id.lineLogo);
         Bus b = objects[position];
-        nameView.setText(String.valueOf(b.id));
+        nameView.setText(b.id);
         
         logoView.setImageResource(R.drawable.bus);
         return row;

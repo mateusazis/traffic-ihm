@@ -9,7 +9,7 @@ public class RouteActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
-		setContentView(R.layout.route_layout2);
+		setContentView(R.layout.route_layout);
 		WebView routeWebview = (WebView)findViewById(R.id.routeWebview);
 		routeWebview.getSettings().setBuiltInZoomControls(true);
 		routeWebview.loadUrl("file:///android_asset/print.png");

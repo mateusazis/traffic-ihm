@@ -39,11 +39,10 @@ public class BusDetailsActivity extends Activity {
 	}
 	
 	private void fillData(Bus b){
-		busIDView.setText(String.valueOf(selectedBus.id));
-		
 		ImageHelper.applyImage(logoView, b.line.company.imgName, this);
 		
 		lineNameView.setText(b.line.number);
+		busIDView.setText(selectedBus.id);
 		routeView.setText(b.line.route);
 		
 		setLotation(b.lotationPcgt);

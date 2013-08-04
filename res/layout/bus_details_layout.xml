@@ -137,12 +137,11 @@
 
         <TextView
             android:id="@+id/tvBusID"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/tvLineIDName"
-            android:layout_alignBottom="@+id/tvLineIDName"
             android:layout_alignParentRight="true"
-            android:layout_toRightOf="@+id/route"
+            android:layout_toRightOf="@+id/tvLineIDName"
             android:gravity="center_horizontal"
             android:text="23456"
             android:textAppearance="?android:attr/textAppearanceMedium"

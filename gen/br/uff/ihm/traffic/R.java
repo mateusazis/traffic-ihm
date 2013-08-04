@@ -73,8 +73,7 @@ public final class R {
         public static final int line_details_layout=0x7f030004;
         public static final int line_list_item=0x7f030005;
         public static final int main_layout=0x7f030006;
-        public static final int route_layout2=0x7f030007;
-        public static final int spinner_item=0x7f030008;
+        public static final int route_layout=0x7f030007;
     }
     public static final class menu {
         public static final int feedback_menu=0x7f090000;

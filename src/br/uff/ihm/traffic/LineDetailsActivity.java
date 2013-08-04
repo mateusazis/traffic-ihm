@@ -37,7 +37,7 @@ public class LineDetailsActivity extends Activity implements OnItemClickListener
 		
 		lineNameView.setText(l.number);
 		routeView.setText(l.route);
-		nextBusTV.setText(String.format("00:%2d:%2d", l.nextBusTime / 60, l.nextBusTime % 60));
+		nextBusTV.setText(String.format("00:%02d:%02d", l.nextBusTime / 60, l.nextBusTime % 60));
 		
 		BusAdapter adapter = new BusAdapter(this, R.layout.bus_list_item, selectedLine.bus);
 		busListView.setAdapter(adapter);

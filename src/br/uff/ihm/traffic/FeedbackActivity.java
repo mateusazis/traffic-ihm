@@ -34,9 +34,11 @@ public class FeedbackActivity extends Activity {
 				selectedBusPos = i + 1;
 		}
 		
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, options);
-		adapter.setDropDownViewResource(R.layout.spinner_item);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, options);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		s.setAdapter(adapter);
+		s.setPrompt("N/A");
+		
 		
 		if(selectedBusPos != -1)
 			s.setSelection(selectedBusPos);
