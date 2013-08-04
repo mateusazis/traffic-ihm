@@ -9,9 +9,10 @@
         android:id="@+id/RelativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/feedbackMsg"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/feedbackMsg"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="10dp" >
 
         <Spinner
@@ -33,44 +34,26 @@
             android:text="Tipo:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </RelativeLayout>
-    
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:drawableLeft="@drawable/send_icon"
-        android:gravity="center_vertical|center_horizontal|center"
-        android:onClick="sendFeedback"
-        android:text="Enviar" />
 
     <EditText
         android:id="@+id/feedbackMsg"
-        android:layout_width="300dp"
-        android:layout_height="225dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/button1"
-        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignRight="@+id/RelativeLayout3"
+        android:layout_below="@+id/textView3"
         android:ems="10"
         android:gravity="top"
         android:inputType="textMultiLine|textLongMessage" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/feedbackMsg"
-        android:layout_alignLeft="@+id/feedbackMsg"
-        android:text="Mensagem:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <RelativeLayout
-        android:id="@+id/RelativeLayout2"
+        android:id="@+id/RelativeLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView3"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignRight="@+id/feedbackMsg" >
+        android:layout_alignLeft="@+id/RelativeLayout2"
+        android:layout_alignRight="@+id/RelativeLayout2"
+        android:layout_below="@+id/RelativeLayout2" >
 
         <TextView
             android:id="@+id/textView4"
@@ -86,8 +69,30 @@
             android:id="@+id/busIDSpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/textView4"/>
+            android:layout_toRightOf="@+id/textView4" />
+
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/RelativeLayout3"
+        android:layout_below="@+id/RelativeLayout3"
+        android:text="Mensagem:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:drawableLeft="@drawable/send_icon"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:onClick="sendFeedback"
+        android:text="Enviar" />
 
 </RelativeLayout>
