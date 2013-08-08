@@ -2,6 +2,7 @@ package br.uff.ihm.traffic;
 
 import java.util.ArrayList;
 
+import br.uff.ihm.traffic.utils.ImageHelper;
 import br.uff.ihm.traffic.utils.NothingSelectedSpinnerAdapter;
 import br.uff.ihm.traffic.models.Bus;
 import br.uff.ihm.traffic.models.Line;
@@ -9,6 +10,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +24,9 @@ public class FeedbackActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.feedback_layout);
+		
+		ImageView img = (ImageView)findViewById(R.id.lineLogo);
+		ImageHelper.applyImage(img, currentLine.company.imgName, this);
 		
 		setupFeedbackSpinner();
 		setupBusSpinner();

@@ -3,6 +3,7 @@ package br.uff.ihm.traffic;
 import com.github.espiandev.showcaseview.ShowcaseView;
 
 import br.uff.ihm.traffic.models.Bus;
+import br.uff.ihm.traffic.utils.ImageHelper;
 import br.uff.ihm.traffic.utils.Showcase;
 import android.app.Activity;
 import android.content.Intent;
@@ -16,9 +17,12 @@ import android.os.Bundle;
 public class BusDetailsActivity extends Activity {
 
 	public static Bus selectedBus;
+	private static boolean showCased = false;
+	
 	private TextView lineNameView, routeView, lotationView, averageSpeedView, busIDView;
 	private ImageView logoView;
 	private ProgressBar lotationBar;
+	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -36,8 +40,11 @@ public class BusDetailsActivity extends Activity {
 		
 		fillData(selectedBus);
 		
-		ShowcaseView v = Showcase.make(this, R.id.feedback_button, "Enviar comentários", "Se quiser entrar em contato com esta empresa de ônibus, basta clicar no botão abaixo!\n\nÉ isso! Bom uso!");
-		v.show();
+		if(!showCased){
+			ShowcaseView v = Showcase.make(this, R.id.feedback_button, "Enviar comentários", "Se quiser entrar em contato com esta empresa de ônibus, basta clicar no botão abaixo!\n\nÉ isso! Bom uso!");
+			v.show();
+			showCased = true;
+		}
 	}
 	
 	private TextView getTextView(int resourceID){

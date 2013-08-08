@@ -5,6 +5,7 @@ import com.github.espiandev.showcaseview.ShowcaseView.OnShowcaseEventListener;
 
 import br.uff.ihm.traffic.models.Bus;
 import br.uff.ihm.traffic.models.Line;
+import br.uff.ihm.traffic.utils.ImageHelper;
 import br.uff.ihm.traffic.utils.Showcase;
 import android.app.Activity;
 import android.content.Intent;
@@ -21,6 +22,7 @@ import android.os.Bundle;
 public class LineDetailsActivity extends Activity implements OnItemClickListener{
 
 	public static Line selectedLine;
+	private static boolean showCased = false;
 	private TextView lineNameView, routeView, nextBusTV;
 	private ImageView logoView;
 	private ListView busListView;
@@ -41,9 +43,13 @@ public class LineDetailsActivity extends Activity implements OnItemClickListener
 		TextView parkedVechilesTV = (TextView)findViewById(R.id.parkedVechilesText);
 		parkedVechilesTV.setText(Html.fromHtml("Veículos <u><font color=\"#F7F757\">parados</font></u> no ponto:"));
 		
-		ShowcaseView showCase = Showcase.make(this, R.id.busListView, "Veículos", "Estes são os veículos parados no ponto. Toque em algum para saber mais a respeito.");
-		showCase.setOnShowcaseEventListener(new ShowCaseListener(this));
-		showCase.show();
+		if(!showCased){
+			ShowcaseView showCase = Showcase.make(this, R.id.busListView, "Veículos", "Estes são os veículos parados no ponto. Toque em algum para saber mais a respeito.");
+			showCase.setOnShowcaseEventListener(new ShowCaseListener(this));
+			showCase.show();
+			
+			showCased = true;
+		}
 	}
 	
 	private void fillData(Line l){

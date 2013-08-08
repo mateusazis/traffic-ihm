@@ -1,6 +1,7 @@
 package br.uff.ihm.traffic;
 
 import br.uff.ihm.traffic.models.Line;
+import br.uff.ihm.traffic.utils.ImageHelper;
 
 import android.app.Activity;
 import android.content.Context;

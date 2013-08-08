@@ -4,16 +4,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_gradient" >
+	
+    <RelativeLayout
+        android:id="@+id/RelativeLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/RelativeLayout2"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/RelativeLayout2"
 
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceMedium" >
+        
+        <TextView
+            android:id="@+id/companyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Empresa:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <ImageView
+            android:id="@+id/lineLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/companyText"
+            android:layout_marginLeft="10dp"
+        	android:layout_marginRight="10dp"
+            android:src="@drawable/route_icon" />
+
+   </RelativeLayout>
+    
+    
+    
     <RelativeLayout
         android:id="@+id/RelativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/RelativeLayout4"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp" >
+         >
 
         <Spinner
             android:id="@+id/feedbackTypeSpinner"
@@ -22,6 +58,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/textView2"
+            android:layout_marginLeft="10dp"
             android:entries="@array/feedback_type" />
 
         <TextView

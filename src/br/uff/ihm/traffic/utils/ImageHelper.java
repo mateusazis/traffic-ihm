@@ -1,4 +1,4 @@
-package br.uff.ihm.traffic;
+package br.uff.ihm.traffic.utils;
 
 import java.io.IOException;
 import java.io.InputStream;

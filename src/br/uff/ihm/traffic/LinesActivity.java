@@ -19,6 +19,7 @@ import android.graphics.Typeface;
 
 public class LinesActivity extends Activity implements OnItemClickListener {
 	
+	private static boolean showCased = false;
 	private Line[] lines;
 	
 	@Override
@@ -38,9 +39,12 @@ public class LinesActivity extends Activity implements OnItemClickListener {
 		lv.setAdapter(a);
 		lv.setOnItemClickListener(this);
 		
-		
-		ShowcaseView showCase = Showcase.make(this, R.id.lines_list, "Linhas", "Toque em alguma linha para ver detalhes");
-		showCase.show();
+		if(!showCased){
+			ShowcaseView showCase = Showcase.make(this, R.id.lines_list, "Linhas", "Toque em alguma linha para ver detalhes");
+			showCase.show();
+			
+			showCased = true;
+		}
 	}
 	
 	private Line[] getLines(){
