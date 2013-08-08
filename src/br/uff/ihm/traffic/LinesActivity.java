@@ -1,5 +1,7 @@
 package br.uff.ihm.traffic;
 
+import com.github.espiandev.showcaseview.ShowcaseView;
+import br.uff.ihm.traffic.utils.Showcase;
 import br.uff.ihm.traffic.models.Bus;
 import br.uff.ihm.traffic.models.Company;
 import br.uff.ihm.traffic.models.Line;
@@ -35,6 +37,10 @@ public class LinesActivity extends Activity implements OnItemClickListener {
 		LineAdapter a = new LineAdapter(this, getApplicationContext(), R.layout.line_list_item, lines);
 		lv.setAdapter(a);
 		lv.setOnItemClickListener(this);
+		
+		
+		ShowcaseView showCase = Showcase.make(this, R.id.lines_list, "Linhas", "Toque em alguma linha para ver detalhes");
+		showCase.show();
 	}
 	
 	private Line[] getLines(){

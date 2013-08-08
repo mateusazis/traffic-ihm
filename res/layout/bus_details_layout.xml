@@ -20,7 +20,7 @@
          android:textColor="#000000" />
 
      <Button
-         android:id="@+id/button2"
+         android:id="@+id/feedback_button"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:layout_alignParentBottom="true"
@@ -33,7 +33,7 @@
          android:id="@+id/parkedVechilesText"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:layout_above="@+id/button2"
+         android:layout_above="@+id/feedback_button"
          android:layout_alignLeft="@+id/RelativeLayout2"
          android:layout_marginBottom="95dp"
          android:text="Velocidade média:"
@@ -124,7 +124,7 @@
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:layout_above="@+id/textView3"
-         android:layout_alignLeft="@+id/button2"
+         android:layout_alignLeft="@+id/feedback_button"
          android:layout_alignRight="@+id/RelativeLayout2"
          android:layout_marginBottom="30dp"
          android:gravity="center_horizontal"

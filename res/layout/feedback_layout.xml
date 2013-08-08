@@ -39,7 +39,7 @@
         android:id="@+id/feedbackMsg"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_above="@+id/routeButton"
         android:layout_alignLeft="@+id/textView3"
         android:layout_alignRight="@+id/RelativeLayout3"
         android:layout_below="@+id/textView3"
@@ -85,7 +85,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/routeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

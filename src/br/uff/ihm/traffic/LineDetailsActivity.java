@@ -1,7 +1,11 @@
 package br.uff.ihm.traffic;
 
+import com.github.espiandev.showcaseview.ShowcaseView;
+import com.github.espiandev.showcaseview.ShowcaseView.OnShowcaseEventListener;
+
 import br.uff.ihm.traffic.models.Bus;
 import br.uff.ihm.traffic.models.Line;
+import br.uff.ihm.traffic.utils.Showcase;
 import android.app.Activity;
 import android.content.Intent;
 import android.text.Html;
@@ -36,6 +40,10 @@ public class LineDetailsActivity extends Activity implements OnItemClickListener
 		
 		TextView parkedVechilesTV = (TextView)findViewById(R.id.parkedVechilesText);
 		parkedVechilesTV.setText(Html.fromHtml("Veículos <u><font color=\"#F7F757\">parados</font></u> no ponto:"));
+		
+		ShowcaseView showCase = Showcase.make(this, R.id.busListView, "Veículos", "Estes são os veículos parados no ponto. Toque em algum para saber mais a respeito.");
+		showCase.setOnShowcaseEventListener(new ShowCaseListener(this));
+		showCase.show();
 	}
 	
 	private void fillData(Line l){
@@ -79,5 +87,26 @@ public class LineDetailsActivity extends Activity implements OnItemClickListener
 	{
 	    this.finish();
 	    SlideTransition.backTransition(this);
+	}
+	
+	private class ShowCaseListener implements OnShowcaseEventListener {
+		private boolean firstCase = true;
+		private Activity activity;
+		
+		public ShowCaseListener(Activity act){
+			this.activity = act;
+		}
+		
+		@Override
+		public void onShowcaseViewHide(ShowcaseView arg0) {
+			if(firstCase){
+				ShowcaseView v = Showcase.make(activity, R.id.routeButton, "Percurso", "Acesse aqui para visualizar um mapa com o percurso do ônibus e saber por onde ele passa :)");
+				v.show();
+			}
+			firstCase = false;
+		}
+
+		@Override
+		public void onShowcaseViewShow(ShowcaseView arg0) {		}
 	}
 }

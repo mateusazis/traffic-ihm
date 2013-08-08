@@ -1,6 +1,9 @@
 package br.uff.ihm.traffic;
 
+import com.github.espiandev.showcaseview.ShowcaseView;
+
 import br.uff.ihm.traffic.models.Bus;
+import br.uff.ihm.traffic.utils.Showcase;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -32,6 +35,9 @@ public class BusDetailsActivity extends Activity {
 		lotationBar = (ProgressBar)findViewById(R.id.lotationProgressBar);
 		
 		fillData(selectedBus);
+		
+		ShowcaseView v = Showcase.make(this, R.id.feedback_button, "Enviar comentários", "Se quiser entrar em contato com esta empresa de ônibus, basta clicar no botão abaixo!\n\nÉ isso! Bom uso!");
+		v.show();
 	}
 	
 	private TextView getTextView(int resourceID){

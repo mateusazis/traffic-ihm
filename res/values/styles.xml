@@ -20,5 +20,6 @@
     <color name="LotationGood">#FF00D820</color>
     <color name="LotationBad">#FFFF0000</color>
     <color name="LotationMiddle">#FF000000</color>
+    <color name="ShowcaseBG">#B0000000</color>
 
 </resources>
