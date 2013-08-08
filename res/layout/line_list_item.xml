@@ -8,13 +8,14 @@
         android:id="@+id/lineName"
         android:layout_width="100dp"
         android:layout_height="49dp"
-        android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/imageView1"
         android:layout_weight="0.12"
+        android:gravity="center_horizontal"
         android:text="aa"
-        android:textSize="32sp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FF000000"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textSize="32sp" />
 
     <ImageView
         android:id="@+id/lineLogo"
@@ -24,5 +25,13 @@
         android:layout_alignParentLeft="true"
         android:layout_toLeftOf="@+id/lineName"
         android:src="@drawable/ic_launcher" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/arrow_right" />
 
 </RelativeLayout>

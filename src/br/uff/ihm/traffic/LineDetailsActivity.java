@@ -4,7 +4,9 @@ import br.uff.ihm.traffic.models.Bus;
 import br.uff.ihm.traffic.models.Line;
 import android.app.Activity;
 import android.content.Intent;
+import android.text.Html;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -22,6 +24,7 @@ public class LineDetailsActivity extends Activity implements OnItemClickListener
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.line_details_layout);
 		logoView = (ImageView)findViewById(R.id.lineLogo);
 		lineNameView = (TextView)findViewById(R.id.lineName);
@@ -30,6 +33,9 @@ public class LineDetailsActivity extends Activity implements OnItemClickListener
 		busListView = (ListView)findViewById(R.id.busListView);
 		
 		fillData(selectedLine);
+		
+		TextView parkedVechilesTV = (TextView)findViewById(R.id.parkedVechilesText);
+		parkedVechilesTV.setText(Html.fromHtml("Veículos <u><font color=\"#F7F757\">parados</font></u> no ponto:"));
 	}
 	
 	private void fillData(Line l){
@@ -65,5 +71,13 @@ public class LineDetailsActivity extends Activity implements OnItemClickListener
 		
 		Intent i = new Intent(getApplicationContext(), BusDetailsActivity.class);
 		startActivity(i);
+		SlideTransition.forwardTransition(this);
+	}
+	
+	@Override
+	public void onBackPressed() 
+	{
+	    this.finish();
+	    SlideTransition.backTransition(this);
 	}
 }

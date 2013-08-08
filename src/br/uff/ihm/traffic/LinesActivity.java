@@ -76,6 +76,7 @@ public class LinesActivity extends Activity implements OnItemClickListener {
 		
 		Intent i = new Intent(getApplicationContext(), LineDetailsActivity.class);
 		startActivity(i);
+		SlideTransition.forwardTransition(this);
 	}
 }
 

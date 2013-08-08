@@ -82,4 +82,11 @@ public class BusDetailsActivity extends Activity {
 		Intent i = new Intent(getApplicationContext(), FeedbackActivity.class);
 		startActivity(i);
 	}
+	
+	@Override
+	public void onBackPressed() 
+	{
+	    this.finish();
+	    SlideTransition.backTransition(this);
+	}
 }
