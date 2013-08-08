@@ -31,7 +31,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:gravity="center_vertical|center_horizontal|center"
-            android:text="Tipo:"
+            android:text="Assunto:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </RelativeLayout>
 

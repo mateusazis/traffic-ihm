@@ -2,14 +2,12 @@ package br.uff.ihm.traffic;
 
 import java.util.ArrayList;
 
+import br.uff.ihm.traffic.utils.NothingSelectedSpinnerAdapter;
 import br.uff.ihm.traffic.models.Bus;
 import br.uff.ihm.traffic.models.Line;
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -34,27 +32,21 @@ public class FeedbackActivity extends Activity {
 		s.setPrompt("Selecione uma opção");
 		
 		String [] options = getResources().getStringArray(R.array.feedback_type);
-		ArrayList<String> optionsList = new ArrayList<String>();
-		optionsList.add("Selecione...");
-		for(String str : options)
-			optionsList.add(str);
 		
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, optionsList);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, options);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		s.setAdapter(adapter);
+		s.setAdapter(new NothingSelectedSpinnerAdapter(adapter, R.layout.contact_spinner_row_nothing_selected, this));
 	}
 	
 	private void setupBusSpinner(){
 		final Spinner busSpinner = (Spinner)findViewById(R.id.busIDSpinner);
 		final ArrayList<String> options = new ArrayList<String>();
-		options.add("Selecione...");
-		int selectedBusPos = -1;
+		options.add("Nenhum");
 		Bus [] busList = currentLine.bus;
 		for(int i = 0; i < busList.length; i++){
 			Bus b = busList[i];
 			options.add(b.id + "");
-			if(currentBus != null && b.id == currentBus.id)
-				selectedBusPos = i + 1;
 		}
 		
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, options);
@@ -63,26 +55,7 @@ public class FeedbackActivity extends Activity {
 		busSpinner.setPrompt("Selecione uma opção");
 		
 		
-		if(selectedBusPos != -1)
-			busSpinner.setSelection(selectedBusPos);
-		
-//		busSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
-//		    @Override
-//		    public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
-////		        items[0] = "ABC";
-//		    	options.set(0, "ABCD");
-//		    	busSpinner.setSelection(position);
-//		    	Log.v("", "on item selected, position: " + position);
-////		        selectedItem = options.get(position);
-//		        
-//		    }
-//
-//		    @Override
-//		    public void onNothingSelected(AdapterView<?> arg0) {
-//		    	this.onItemSelected(arg0, null, 0, 0);
-//		    	Log.v("","on nothing item selected");
-//		    }
-//		});
+		busSpinner.setAdapter(new NothingSelectedSpinnerAdapter(adapter, R.layout.contact_spinner_row_nothing_selected, this));
 	}
 	
 	public void sendFeedback(View v){
